@@ -3605,6 +3605,7 @@ pub async fn prepare_gateway(
 
         tool_registry.register(Box::new(exec_tool));
         tool_registry.register(Box::new(moltis_tools::calc::CalcTool::new()));
+        tool_registry.register(Box::new(moltis_tools::witness_download::WitnessDownloadTool::new()));
         #[cfg(feature = "wasm")]
         {
             let wasm_limits = sandbox_router
